@@ -3,6 +3,7 @@ package com.ccristaldo.demoguru99v1.tests;
 import com.ccristaldo.demoguru99v1.pages.HomePage;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -25,7 +26,7 @@ public class BaseTest {
         //src/test/resources/geckodriver
        // System.setProperty("webdriver.gecko.driver", "/Users/carloscristaldo/bin/geckodriver");
         log.info("Test are starting ... ");
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
 
     }
 

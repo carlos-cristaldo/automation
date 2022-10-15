@@ -1,9 +1,14 @@
 package com.ccristaldo.demoguru99v1.pages;
 
+
+
 import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static com.ccristaldo.demoguru99v1.utils.Constants.baseUrl;
+
 @Slf4j
 public class HomePage extends BasePage{
 
@@ -11,7 +16,7 @@ public class HomePage extends BasePage{
         super(driver);
     }
 
-    private static final String baseUrl = "https://www.demo.guru99.com/V4/";
+    //private static final String baseUrl = "https://www.demo.guru99.com/V4/";
 
     private static final String userId = "mngr447125";
 
@@ -38,8 +43,15 @@ public class HomePage extends BasePage{
         writeText(userTextBox, userId);
         writeText(passTextBox, password);
         click(btnLogin);
-        //return new ManagerHomePage(driver);
 
+    }
+
+    @Step("Login step using user: "+ userId +", password: " + password)
+    public void doLoginWithData(String user, String pass){
+
+        writeText(userTextBox, user);
+        writeText(passTextBox, pass);
+        click(btnLogin);
 
     }
 
